@@ -4,25 +4,25 @@ on:
   workflow_dispatch:
     inputs:
       MANIFEST_URL:
-        description: https://github.com/PitchBlackRecoveryProject/manifest_pb
+        description: https://github.com/SHRP/manifest
         required: true
-        default: 'https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp'
+        default: 'https://github.com/SHRP/manifest'
       MANIFEST_BRANCH:
-        description: android-6.0
+        description: v3_9.0
         required: true
-        default: android-6.0
+        default: v3_9.0
       DEVICE_TREE_URL:
-        description: https://github.com/TeamWin/android_device_samsung_zeroflte
+        description: https://github.com/derveror/device_samsung_zerolte
         required: true
-        default: 'https://github.com/TeamWin/android_device_asus_I003D'
+        default: 'https://github.com/derveror/device_samsung_zerolte'
       DEVICE_TREE_BRANCH:
-        description: android-6.0
+        description: fox_9.0
         required: true
-        default: android-6.0
+        default: fox_9.0
       DEVICE_PATH:
-        description: device/samsung/zeroflte
+        description: device/samsung/zerolte
         required: true
-        default: 'device/asus/I003D'
+        default: 'device/samsung/zerolte'
       COMMON_TREE_URL:
         description: 'COMMON_TREE_URL (if no common tree, leave blank)'
         required: false
@@ -30,13 +30,13 @@ on:
         description: 'COMMON_PATH (if no common tree, leave blank)'
         required: false
       DEVICE_NAME:
-        description: android_device_samsung_zeroflte
+        description: android_device_samsung_zerolte
         required: true
-        default: 'I003D'
+        default: 'android_device_samsung_zerolte'
       MAKEFILE_NAME:
         description: AndroidProducts
         required: true
-        default: 'twrp_I003D'
+        default: 'omni_zerolte'
       BUILD_TARGET:
         description: 'BUILD_TARGET'
         required: true

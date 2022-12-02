@@ -4,23 +4,23 @@ on:
   workflow_dispatch:
     inputs:
       MANIFEST_URL:
-        description: https://github.com/SHRP/manifest
+        description: 'MANIFEST_URL (if using SSH keys, use git@github.com:repo URL format)'
         required: true
         default: 'https://github.com/SHRP/manifest'
       MANIFEST_BRANCH:
-        description: v3_9.0
+        description: 'MANIFEST_BRANCH'
         required: true
-        default: v3_9.0
+        default: 'v3_9.0'
       DEVICE_TREE_URL:
-        description: https://github.com/derveror/device_samsung_zerolte
+        description: 'DEVICE_TREE_URL'
         required: true
         default: 'https://github.com/derveror/device_samsung_zerolte'
       DEVICE_TREE_BRANCH:
-        description: fox_9.0
+        description: 'DEVICE_TREE_BRANCH'
         required: true
-        default: fox_9.0
+        default: 'fox_9.0'
       DEVICE_PATH:
-        description: device/samsung/zerolte
+        description: 'DEVICE_PATH'
         required: true
         default: 'device/samsung/zerolte'
       COMMON_TREE_URL:
@@ -30,11 +30,11 @@ on:
         description: 'COMMON_PATH (if no common tree, leave blank)'
         required: false
       DEVICE_NAME:
-        description: android_device_samsung_zerolte
+        description: 'DEVICE_NAME'
         required: true
         default: 'android_device_samsung_zerolte'
       MAKEFILE_NAME:
-        description: AndroidProducts
+        description: 'MAKEFILE_NAME'
         required: true
         default: 'omni_zerolte'
       BUILD_TARGET:

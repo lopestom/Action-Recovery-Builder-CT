@@ -12,9 +12,9 @@ on:
         required: true
         default: 'v3_9.0'
       DEVICE_TREE_URL:
-        description: 'DEVICE_TREE_URL'
-        required: true
-        default: 'https://github.com/derveror/device_samsung_zerolte'
+        description: 'https://github.com/derveror/device_samsung_zerolte'
+        required: true 
+        default: 'https://github.com/lopestom/device_samsung_zerolte'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true

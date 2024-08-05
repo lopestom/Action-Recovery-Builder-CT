@@ -149,7 +149,6 @@ jobs:
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make clean && make ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
-        cp  workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/vendor_boot.img    workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/vendor_boot-${{ github.event.inputs.DEVICE_NAME }}-$(date +"%Y%m%d").img
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
     - name: Upload to Release
@@ -159,11 +158,12 @@ jobs:
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/${{ github.event.inputs.BUILD_TARGET }}.img
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.zip
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*vendor*.img
+          cp  workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/vendor_boot.img    workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/vendor_boot-${{ github.event.inputs.DEVICE_NAME }}-$(date +"%Y%m%d").img
         name: ${{ github.event.inputs.DEVICE_NAME }}-${{ github.run_id }}
         tag_name: ${{ github.run_id }}
         body: |
           Manifest: ${{ github.event.inputs.MANIFEST_BRANCH }}
           Device: ${{ github.event.inputs.DEVICE_NAME }}
-          Target: ${{ github.event.inputs.BUILD_TARGET }}.img
+          Target: ${{ github.event.inputs.BUILD_TARGET }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

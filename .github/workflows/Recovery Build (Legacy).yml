@@ -138,10 +138,13 @@ jobs:
 
     - name: Switch to Python2
       run: |
-        sudo apt -y install python
-        sudo rm -rf /usr/bin/python
-        sudo ln -s /usr/bin/python2 /usr/bin/python
-        # sudo ln -s /usr/bin/python3 /usr/bin/python3
+        sudo apt -y install python2
+        cd /usr/bin
+        sudo ln -sf python2 python
+#        sudo apt -y install python
+#        sudo rm -rf /usr/bin/python
+#        sudo ln -s /usr/bin/python2 /usr/bin/python
+#        # sudo ln -s /usr/bin/python3 /usr/bin/python3
       continue-on-error: true
 
     - name: Building recovery
